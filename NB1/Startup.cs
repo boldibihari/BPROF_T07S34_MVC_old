@@ -7,6 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data;
+using Logic;
+using Models;
+using Repository;
 
 namespace NB1
 {
@@ -16,6 +20,13 @@ namespace NB1
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(opt => opt.EnableEndpointRouting = false);
+            services.AddTransient<ClubLogic, ClubLogic>();
+            services.AddTransient<PlayerLogic, PlayerLogic>();
+            services.AddTransient<ManagerLogic, ManagerLogic>();
+            services.AddTransient<IRepository<Club>, ClubRepository>();
+            services.AddTransient<IRepository<Player>, PlayerRepository>();
+            services.AddTransient<IRepository<Manager>, ManagerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,13 +39,7 @@ namespace NB1
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
