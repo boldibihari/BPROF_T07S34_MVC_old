@@ -53,5 +53,9 @@ namespace NB1.Controllers
         {
             return View(managerLogic.GetManager(managerid));
         }
+        public IActionResult AllPlayerFromClub(string clubid)
+        {
+            return View(playerLogic.AllPlayerFromClub(clubid).OrderBy(x => x.PlayerPosition));
+        }
     }
 }

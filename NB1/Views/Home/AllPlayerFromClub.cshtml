@@ -1,0 +1,34 @@
+﻿@using Models
+@model IQueryable<Player>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Players</title>
+</head>
+<body>
+
+    <a href="/Home/Index">[Main page]</a> <br /> <br />
+
+    <table>
+        <tr>
+            <th>Name &nbsp; &nbsp;</th>
+            <th>Nationality &nbsp; &nbsp;</th>
+            <th>Birthdate &nbsp; &nbsp;</th>
+            <th>Position &nbsp; &nbsp;</th>
+            <th>Value &nbsp; &nbsp;</th>
+        </tr>
+
+        @foreach (var player in Model)
+        {
+             <tr>
+                 <td>@player.PlayerName &nbsp; &nbsp;</td> 
+                 <td>@player.PlayerNationality &nbsp; &nbsp;</td> 
+                 <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; &nbsp;</td> 
+                 <td>@player.PlayerPosition &nbsp; &nbsp;</td> 
+                 <td>@player.PlayerValue &nbsp; &nbsp;</td>
+             </tr>
+        }
+
+    </table>
+</body>
+</html>
