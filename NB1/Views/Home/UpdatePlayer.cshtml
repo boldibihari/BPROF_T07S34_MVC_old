@@ -1,0 +1,35 @@
+﻿@using Models
+@model Player
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UpdatePlayer</title>
+</head>
+<body>
+
+    <h1>Update player</h1>
+    <form action="/Home/UpdatePlayer" method="post">
+        Name: <br />
+        <input type="text" value="@Model.PlayerName" name="PlayerName" /> <br />
+        Nationality: <br />
+        <input type="text" value="@Model.PlayerNationality" name="PlayerNationality" /> <br />
+        Birthdate: <br />
+        <input type="text" value="@Model.PlayerBirthDate" name="PlayerBirthDate" /> <br />
+        Position: <br />
+        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
+        <label for="Goalkeeper">Goalkeeper</label><br>
+        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
+        <label for="Defender">Defender</label><br>
+        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
+        <label for="Midfielder">Midfielder</label><br><br>
+        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
+        <label for="Forward">Forward</label><br><br>
+        Value: <br />
+        <input type="number" value="@Model.PlayerValue" name="PlayerValue" /> <br />
+        <input type="hidden" value="@Model.PlayerID" name="PlayerID" />
+        <input type="hidden" value="@Model.ClubID" name="ClubID" />
+        <input type="submit" value="Update" /> <br />
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@using Models
+@model Manager
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UpdateManager</title>
+</head>
+<body>
+
+    <h1>Update manager</h1>
+    <form action="/Home/UpdateManager" method="post">
+        Name: <br />
+        <input type="text" value="@Model.ManagerName" name="ManagerName" /> <br />
+        Nationality: <br />
+        <input type="text" value="@Model.ManagerNationality" name="ManagerNationality" /> <br />
+        Birthdate: <br />
+        <input type="text" value="@Model.ManagerBirthDate" name="ManagerBirthDate" /> <br />
+        Start year: <br />
+        <input type="number" value="@Model.ManagerStartYear" name="ManagerStartYear">
+        <input type="hidden" value="@Model.ManagerID" name="ManagerID" />
+        <input type="hidden" value="@Model.ClubID" name="ClubID" />
+        <input type="submit" value="Update" /> <br />
+    </form>
+
+</body>
+</html>

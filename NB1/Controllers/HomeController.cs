@@ -85,10 +85,10 @@ namespace NB1.Controllers
         [HttpGet]
         public IActionResult AddManager(string clubid)
         {
-            return View(nameof(Addmanager), clubid);
+            return View(nameof(AddManager), clubid);
         }
         [HttpPost]
-        public IActionResult Addmanager(Manager manager, string clubid)
+        public IActionResult AddManager(Manager manager, string clubid)
         {
             manager.ManagerID = Guid.NewGuid().ToString();
             clubLogic.AddManagerToClub(manager, clubid);
@@ -124,6 +124,39 @@ namespace NB1.Controllers
             clubLogic.DeleteManagerFromClub(managerdelete, clubid);
             managerLogic.DeleteManager(managerid);
             return RedirectToAction(nameof(Club), new { clubid = clubid });
+        }
+        [HttpGet]
+        public IActionResult UpdateClub(string clubid)
+        {
+            return View(clubLogic.GetClub(clubid));
+        }
+        [HttpPost]
+        public IActionResult UpdateClub(string oldid, Club club)
+        {
+            clubLogic.UpdateClub(oldid, club);
+            return RedirectToAction(nameof(Club), new { clubid = oldid });
+        }
+        [HttpGet]
+        public IActionResult UpdatePlayer(string playerid)
+        {
+            return View(playerLogic.GetPlayer(playerid));
+        }
+        [HttpPost]
+        public IActionResult UpdatePlayer(Player player)
+        {
+            playerLogic.UpdatePlayer(player.PlayerID, player);
+            return RedirectToAction(nameof(AllPlayerFromClub), new { clubid = player.ClubID });
+        }
+        [HttpGet]
+        public IActionResult UpdateManager(string managerid)
+        {
+            return View(managerLogic.GetManager(managerid));
+        }
+        [HttpPost]
+        public IActionResult UpdateManager(Manager manager)
+        {
+            managerLogic.UpdateManager(manager.ManagerID, manager);
+            return RedirectToAction(nameof(Manager), new { managerid = manager.ManagerID });
         }
     }
 }
