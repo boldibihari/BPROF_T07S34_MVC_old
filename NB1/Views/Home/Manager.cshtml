@@ -1,0 +1,29 @@
+﻿@using Models
+@model Manager
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Model.ManagerName</title>
+</head>
+<body>
+
+    <a href="/Home/Index">[Main page]</a> <br />
+    <h1>@Model.ManagerName</h1>
+
+    <table>
+        <tr>
+            <th>Nationality</th>
+            <th>Birthdate</th>
+            <th>Starter year</th>
+            <th>Club</th>
+        </tr>
+        <tr>
+            <td>@Model.ManagerNationality</td>
+            <td>@Model.ManagerBirthDate.ToString("yyyy.MM.dd")</td>
+            <td>@Model.ManagerStartYear</td>
+            <td>@Model.Club.ClubName</td>
+        </tr>
+    </table>
+
+</body>
+</html>

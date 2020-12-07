@@ -1,0 +1,31 @@
+﻿@using Models
+@model Player
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Model.PlayerName</title>
+</head>
+<body>
+
+    <a href="/Home/Index">[Main page]</a> <br />
+    <h1>@Model.PlayerName</h1>
+
+    <table>
+        <tr>
+            <th>Nationality</th>
+            <th>Birthdate</th>
+            <th>Position</th>
+            <th>Value</th>
+            <th>Club</th>
+        </tr>
+        <tr>
+            <td>@Model.PlayerNationality</td>
+            <td>@Model.PlayerBirthDate.ToString("yyyy.MM.dd")</td>
+            <td>@Model.PlayerPosition</td>
+            <td>@Model.PlayerValue</td>
+            <td>@Model.Club.ClubName</td>
+        </tr>
+    </table>
+
+</body>
+</html>
