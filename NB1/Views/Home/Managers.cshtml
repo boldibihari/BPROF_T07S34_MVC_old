@@ -1,0 +1,18 @@
+﻿@using Models
+@model IQueryable<Manager>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Managers</title>
+</head>
+<body>
+
+    <a href="/Home/Index">[Main page]</a>
+    <h1>Managers</h1>
+    @foreach (var manager in Model)
+    {
+        <a href="/Home/Manager?managerid=@manager.ManagerID">@manager.ManagerName</a> <br />
+    }
+
+</body>
+</html>

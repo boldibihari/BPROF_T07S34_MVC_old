@@ -29,5 +29,17 @@ namespace NB1.Controllers
         {
             return View();
         }
+        public IActionResult Clubs()
+        {
+            return View(clubLogic.GetAllClub());
+        }
+        public IActionResult Players()
+        {
+            return View(playerLogic.GetAllPlayer());
+        }
+        public IActionResult Managers()
+        {
+            return View(managerLogic.GetAllManager());
+        }
     }
 }
