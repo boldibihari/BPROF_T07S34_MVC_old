@@ -1,5 +1,6 @@
 ﻿using Logic;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,42 @@ namespace NB1.Controllers
         public IActionResult AllPlayerFromClub(string clubid)
         {
             return View(playerLogic.AllPlayerFromClub(clubid).OrderBy(x => x.PlayerPosition));
+        }
+        [HttpGet]
+        public IActionResult AddClub()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddClub(Club club)
+        {
+            club.ClubID = Guid.NewGuid().ToString();
+            clubLogic.AddClub(club);
+            return RedirectToAction(nameof(Clubs));
+        }
+        [HttpGet]
+        public IActionResult AddPlayer(string clubid)
+        {
+            return View(nameof(AddPlayer), clubid);
+        }
+        [HttpPost]
+        public IActionResult AddPlayer(Player player, string clubid)
+        {
+            player.PlayerID = Guid.NewGuid().ToString();
+            clubLogic.AddPlayerToClub(player, clubid);
+            return RedirectToAction(nameof(AllPlayerFromClub), new { clubid = clubid });
+        }
+        [HttpGet]
+        public IActionResult AddManager(string clubid)
+        {
+            return View(nameof(Addmanager), clubid);
+        }
+        [HttpPost]
+        public IActionResult Addmanager(Manager manager, string clubid)
+        {
+            manager.ManagerID = Guid.NewGuid().ToString();
+            clubLogic.AddManagerToClub(manager, clubid);
+            return RedirectToAction(nameof(Club), new { clubid = clubid });
         }
     }
 }

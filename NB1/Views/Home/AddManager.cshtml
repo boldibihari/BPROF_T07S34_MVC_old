@@ -1,0 +1,25 @@
+﻿@model string
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AddManager</title>
+</head>
+<body>
+
+    <a href="/Home/Index">[Main page]</a> <br />
+    <h1>Add new manager</h1>
+    <form action="/Home/AddManager" method="post">
+        Name: <br />
+        <input type="text" name="ManagerName" /> <br />
+        Nationality: <br />
+        <input type="text" name="ManagerNationality" /> <br />
+        Birthdate: <br />
+        <input type="datetime" name="ManagerBirthDate" /> <br />
+        Start year: <br />
+        <input type="number" name="ManagerStartYear" /> <br />
+        <input type="hidden" name="clubid" value="@Model" /> <br />
+        <input type="submit" value="Add" /> <br />
+    </form>
+
+</body>
+</html>
