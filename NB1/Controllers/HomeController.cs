@@ -94,5 +94,36 @@ namespace NB1.Controllers
             clubLogic.AddManagerToClub(manager, clubid);
             return RedirectToAction(nameof(Club), new { clubid = clubid });
         }
+        public IActionResult DeleteClub(string clubid)
+        {
+            var players = clubLogic.GetClub(clubid).Players.ToArray();
+            for (int i = 0; i < players.Length; i++)
+            {
+                var player = players[i];
+                clubLogic.DeletePlayerFromClub(player, clubid);
+                playerLogic.DeletePlayer(player.PlayerID);
+            }
+            var manager = clubLogic.GetClub(clubid).Manager;
+            clubLogic.DeleteManagerFromClub(manager, clubid);
+            managerLogic.DeleteManager(manager.ManagerID);
+            clubLogic.DeleteClub(clubid);
+            return RedirectToAction(nameof(Clubs));
+        }
+        public IActionResult DeletePlayer(string playerid)
+        {
+            var playerdelete = playerLogic.GetPlayer(playerid);
+            string clubid = playerdelete.ClubID;
+            clubLogic.DeletePlayerFromClub(playerdelete, clubid);
+            playerLogic.DeletePlayer(playerid);
+            return RedirectToAction(nameof(AllPlayerFromClub), new { clubid = clubid });
+        }
+        public IActionResult DeleteManager(string managerid)
+        {
+            var managerdelete = managerLogic.GetManager(managerid);
+            string clubid = managerdelete.ClubID;
+            clubLogic.DeleteManagerFromClub(managerdelete, clubid);
+            managerLogic.DeleteManager(managerid);
+            return RedirectToAction(nameof(Club), new { clubid = clubid });
+        }
     }
 }

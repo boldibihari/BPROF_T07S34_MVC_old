@@ -20,13 +20,14 @@
 
         @foreach (var player in Model)
         {
-             <tr>
-                 <td>@player.PlayerName &nbsp; &nbsp;</td> 
-                 <td>@player.PlayerNationality &nbsp; &nbsp;</td> 
-                 <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; &nbsp;</td> 
-                 <td>@player.PlayerPosition &nbsp; &nbsp;</td> 
-                 <td>@player.PlayerValue &nbsp; &nbsp;</td>
-             </tr>
+           <tr>
+               <td>@player.PlayerName &nbsp; &nbsp;</td>
+               <td>@player.PlayerNationality &nbsp; &nbsp;</td>
+               <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; &nbsp;</td>
+               <td>@player.PlayerPosition &nbsp; &nbsp;</td>
+               <td>@player.PlayerValue &nbsp; &nbsp;</td>
+               <td><a href="/Home/DeletePlayer?playerid=@player.PlayerID">[Delete]</a></td>
+           </tr>
         }
 
     </table>
