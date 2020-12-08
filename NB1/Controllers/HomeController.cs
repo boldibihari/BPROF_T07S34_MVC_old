@@ -58,6 +58,10 @@ namespace NB1.Controllers
         {
             return View(playerLogic.AllPlayerFromClub(clubid).OrderBy(x => x.PlayerPosition));
         }
+        public IActionResult Captains()
+        {
+            return View(playerLogic.GetAllPlayer().Where(x => x.PlayerName.EndsWith(" C")));
+        }
         [HttpGet]
         public IActionResult AddClub()
         {

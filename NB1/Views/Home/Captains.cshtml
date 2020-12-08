@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Players</title>
+    <title>Captains</title>
 </head>
 <body>
 
     <a href="/Home/Index">[Main page]</a>
     <h1>Players</h1>
-    <a href="/Home/Captains">Captains</a> <br /> <br />
     @foreach (var player in Model)
     {
         <a href="/Home/Player?playerid=@player.PlayerID">@player.PlayerName</a> <br />
