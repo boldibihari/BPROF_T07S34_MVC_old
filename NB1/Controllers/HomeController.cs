@@ -32,15 +32,15 @@ namespace NB1.Controllers
         }
         public IActionResult Clubs()
         {
-            return View(clubLogic.GetAllClub());
+            return View(clubLogic.GetAllClub().OrderBy(x => x.ClubName));
         }
         public IActionResult Players()
         {
-            return View(playerLogic.GetAllPlayer());
+            return View(playerLogic.GetAllPlayer().OrderBy(x => x.PlayerName));
         }
         public IActionResult Managers()
         {
-            return View(managerLogic.GetAllManager());
+            return View(managerLogic.GetAllManager().OrderBy(x => x.ManagerName));
         }
         public IActionResult Club(string clubid)
         {
