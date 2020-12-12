@@ -20,17 +20,24 @@
 
         @foreach (var player in Model)
         {
-               <tr>
-                  <td>@player.PlayerName &nbsp; &nbsp;</td>
-                  <td>@player.PlayerNationality &nbsp; &nbsp;</td>
-                  <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; &nbsp;</td>
-                  <td>@player.PlayerPosition &nbsp; &nbsp;</td>
-                  <td>@player.PlayerValue &nbsp; &nbsp;</td>
-                  <td><a href="/Home/DeletePlayer?playerid=@player.PlayerID">[Delete]</a></td>
-                  <td>&nbsp;<a href="/Home/UpdatePlayer?playerid=@player.PlayerID">[Update]</a></td>
-               </tr>
+            <tr>
+                <td>@player.PlayerName &nbsp; &nbsp;</td>
+                <td>@player.PlayerNationality &nbsp; &nbsp;</td>
+                <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; &nbsp;</td>
+                <td>@player.PlayerPosition &nbsp; &nbsp;</td>
+                <td>@player.PlayerValue</td>
+                <td><a href="/Home/DeletePlayer?playerid=@player.PlayerID">[Delete]</a></td>
+                <td>&nbsp;<a href="/Home/UpdatePlayer?playerid=@player.PlayerID">[Update]</a></td>
+            </tr>
         }
-
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>@Math.Round(Model.Sum(x => x.PlayerValue),2)</td>
+        </tr>
     </table>
+
 </body>
 </html>
