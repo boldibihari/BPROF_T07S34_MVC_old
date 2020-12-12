@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td>@Model.ManagerNationality &nbsp; &nbsp;</td>
-            <td>@Model.ManagerBirthDate.ToString("yyyy.MM.dd") &nbsp; &nbsp;</td>
+            <td>@Model.ManagerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - Model.ManagerBirthDate.Year))&nbsp; &nbsp;</td>
             <td>@Model.ManagerStartYear &nbsp; &nbsp;</td>
             <td>@Model.Club.ClubName &nbsp; &nbsp;</td>
         </tr>

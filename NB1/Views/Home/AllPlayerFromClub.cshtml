@@ -23,7 +23,7 @@
             <tr>
                 <td>@player.PlayerName &nbsp; &nbsp;</td>
                 <td>@player.PlayerNationality &nbsp; &nbsp;</td>
-                <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; &nbsp;</td>
+                <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - player.PlayerBirthDate.Year)) &nbsp; &nbsp;</td>
                 <td>@player.PlayerPosition &nbsp; &nbsp;</td>
                 <td>@player.PlayerValue</td>
                 <td><a href="/Home/DeletePlayer?playerid=@player.PlayerID">[Delete]</a></td>
