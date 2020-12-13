@@ -25,7 +25,7 @@
                 <td>@player.PlayerNationality &nbsp; &nbsp;</td>
                 <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - player.PlayerBirthDate.Year)) &nbsp; &nbsp;</td>
                 <td>@player.PlayerPosition &nbsp; &nbsp;</td>
-                <td>@player.PlayerValue</td>
+                <td>€@player.PlayerValue m</td>
                 <td><a href="/Home/DeletePlayer?playerid=@player.PlayerID">[Delete]</a></td>
                 <td>&nbsp;<a href="/Home/UpdatePlayer?playerid=@player.PlayerID">[Update]</a></td>
             </tr>
@@ -35,7 +35,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>@Math.Round(Model.Sum(x => x.PlayerValue),2)</td>
+            <td>€@Math.Round(Model.Sum(x => x.PlayerValue), 2) m</td>
         </tr>
     </table>
 

@@ -8,10 +8,10 @@
 <body>
 
     <h1>Statistics</h1>
-    <p>Value: @Model.ClubValue</p>
+    <p>Value: €@Model.ClubValue m</p>
     <p>Average age: @Model.AverageAge</p>
-    <p>Average player value: @Model.AveragePlayerValue</p>
-    <p>Average club value: @Model.AverageClubValue</p>
+    <p>Average player value: €@Model.AveragePlayerValue m</p>
+    <p>Average club value: €@Model.AverageClubValue m</p>
     <p>Nationalities:</p>
     @foreach (var nationalities in Model.Nationality)
     {
