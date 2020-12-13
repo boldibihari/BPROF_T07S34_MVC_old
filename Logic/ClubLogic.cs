@@ -1,6 +1,7 @@
 ﻿using Models;
 using Repository;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Logic
@@ -57,6 +58,52 @@ namespace Logic
         {
             GetClub(clubid).Manager = null;
             clubRepo.Save();
+        }
+        public double ClubValue(string clubid)
+        {
+            return Math.Round(GetClub(clubid).Players.Sum(x => x.PlayerValue), 2);
+        }
+        public int AverageAge(string clubid)
+        {
+            return (int)GetClub(clubid).Players.Average(x => DateTime.Now.Year - x.PlayerBirthDate.Year); 
+        }
+        public double AveragePlayerValue(string clubid)
+        {
+            return Math.Round(GetClub(clubid).Players.Average(x => x.PlayerValue), 2);
+        }
+        public List<string> Nationality(string clubid)
+        {
+            List<string> nationalities = new List<string>();
+            Club club = GetClub(clubid);
+            var q = from x in club.Players
+                    group x by x.PlayerNationality into g
+                    select new
+                    {
+                        Nationality = g.Key,
+                        Count = g.Count()
+                    };
+            foreach (var item in q)
+            {
+                nationalities.Add($"{item.Nationality}: {item.Count.ToString()}");
+            }
+            return nationalities;
+        }
+        public List<string> Position(string clubid)
+        {
+            List<string> positions = new List<string>();
+            Club club = GetClub(clubid);
+            var q = (from x in club.Players
+                    group x by x.PlayerPosition into g
+                    select new
+                    {
+                        Position = g.Key,
+                        Count = g.Count()
+                    }).OrderBy(x => x.Position);
+            foreach (var item in q)
+            {
+                positions.Add($"{item.Position}: {item.Count.ToString()}");
+            }
+            return positions;
         }
         # region FillDbWithSamples
         public void FillDbWithSamples()

@@ -1,0 +1,31 @@
+﻿@using Models
+@model NB1Statistics
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NB1Statistics</title>
+</head>
+<body>
+
+    <h1>Statistics</h1>
+    <p>Value: @Model.ClubValue</p>
+    <p>Average age: @Model.AverageAge</p>
+    <p>Average player value: @Model.AveragePlayerValue</p>
+    <p>Average club value: @Model.AverageClubValue</p>
+    <p>Nationalities:</p>
+    @foreach (var nationalities in Model.Nationality)
+    {
+         <ul>
+             <li>@nationalities</li>
+         </ul>
+    }
+    <p>Positions:</p>
+    @foreach (var positions in Model.Position)
+    {
+         <ul>
+             <li>@positions</li>
+         </ul>
+    }
+
+</body>
+</html>

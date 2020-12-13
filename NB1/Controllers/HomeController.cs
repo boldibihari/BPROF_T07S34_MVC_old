@@ -162,5 +162,27 @@ namespace NB1.Controllers
             managerLogic.UpdateManager(manager.ManagerID, manager);
             return RedirectToAction(nameof(Manager), new { managerid = manager.ManagerID });
         }
+        public IActionResult ClubStatistics(string clubid)
+        {
+            ClubStatistics cs = new ClubStatistics();
+            cs.ClubValue = clubLogic.ClubValue(clubid);
+            cs.AverageAge = clubLogic.AverageAge(clubid);
+            cs.AveragePlayerValue = clubLogic.AveragePlayerValue(clubid);
+            Club club = clubLogic.GetClub(clubid);
+            cs.Nationality = clubLogic.Nationality(clubid);
+            cs.Position = clubLogic.Position(clubid);
+            return View(cs);
+        }
+        public IActionResult NB1Statistics()
+        {
+            NB1Statistics nb1s = new NB1Statistics();
+            nb1s.ClubValue = playerLogic.ClubsValue();
+            nb1s.AverageAge = playerLogic.AverageAge();
+            nb1s.AveragePlayerValue = playerLogic.AveragePlayerValue();
+            nb1s.AverageClubValue = playerLogic.AverageClubValue();
+            nb1s.Nationality = playerLogic.Nationality();
+            nb1s.Position = playerLogic.Position();
+            return View(nb1s);
+        }
     }
 }

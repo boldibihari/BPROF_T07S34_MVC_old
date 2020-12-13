@@ -44,5 +44,63 @@ namespace Logic
         {
             return GetAllPlayer().Where(x => x.ClubID == clubid);
         }
+        public double ClubsValue()
+        {
+            return Math.Round(GetAllPlayer().Sum(x => x.PlayerValue), 2);
+        }
+        public int AverageAge()
+        {
+            return (int)GetAllPlayer().Average(x => DateTime.Now.Year - x.PlayerBirthDate.Year);
+        }
+        public double AveragePlayerValue()
+        {
+            return Math.Round(GetAllPlayer().Average(x => x.PlayerValue), 2);
+        }
+        public double AverageClubValue()
+        {
+            var players = GetAllPlayer();
+            var q = (from x in players
+                     group x by x.Club.ClubName into g
+                     select new
+                     {
+                         ClubName = g.Key,
+                         Value = g.Sum(x => x.PlayerValue)
+                     }).Average(x => x.Value);
+            return Math.Round(q, 2);
+        }
+        public List<string> Nationality()
+        {
+            List<string> nationalities = new List<string>();
+            var players = GetAllPlayer();
+            var q = from x in players
+                    group x by x.PlayerNationality into g
+                    select new
+                    {
+                        Nationality = g.Key,
+                        Count = g.Count()
+                    };
+            foreach (var item in q)
+            {
+                nationalities.Add($"{item.Nationality}: {item.Count.ToString()}");
+            }
+            return nationalities;
+        }
+        public List<string> Position()
+        {
+            List<string> positions = new List<string>();
+            var players = GetAllPlayer();
+            var q = (from x in players
+                     group x by x.PlayerPosition into g
+                     select new
+                     {
+                         Position = g.Key,
+                         Count = g.Count()
+                     }).OrderBy(x => x.Position);
+            foreach (var item in q)
+            {
+                positions.Add($"{item.Position}: {item.Count.ToString()}");
+            }
+            return positions;
+        }
     }
 }
