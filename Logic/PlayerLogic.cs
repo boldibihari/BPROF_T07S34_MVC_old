@@ -19,7 +19,6 @@ namespace Logic
             this.playerRepo = playerRepo;
             this.managerRepo = managerRepo;
         }
-
         public void AddPlayer(Player item)
         {
             this.playerRepo.Add(item);
