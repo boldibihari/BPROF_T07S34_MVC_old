@@ -1,43 +1,34 @@
 ﻿@using Models
 @model IQueryable<Player>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Players</title>
-</head>
-<body>
 
-    <a href="/Home/Index">[Main page]</a> <br /> <br />
+<a href="/Home/Index">[Main page]</a> <br /><br />
 
-    <table>
+<table>
+    <tr>
+        <th>Name &nbsp; &nbsp;</th>
+        <th>Nationality &nbsp; &nbsp;</th>
+        <th>Birthdate &nbsp; &nbsp;</th>
+        <th>Position &nbsp; &nbsp;</th>
+        <th>Value &nbsp; &nbsp;</th>
+    </tr>
+
+    @foreach (var player in Model)
+    {
         <tr>
-            <th>Name &nbsp; &nbsp;</th>
-            <th>Nationality &nbsp; &nbsp;</th>
-            <th>Birthdate &nbsp; &nbsp;</th>
-            <th>Position &nbsp; &nbsp;</th>
-            <th>Value &nbsp; &nbsp;</th>
+            <td>@player.PlayerName &nbsp; &nbsp;</td>
+            <td>@player.PlayerNationality &nbsp; &nbsp;</td>
+            <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - player.PlayerBirthDate.Year)) &nbsp; &nbsp;</td>
+            <td>@player.PlayerPosition &nbsp; &nbsp;</td>
+            <td>€@player.PlayerValue m</td>
+            <td><a href="/Home/DeletePlayer?playerid=@player.PlayerID">[Delete]</a></td>
+            <td>&nbsp;<a href="/Home/UpdatePlayer?playerid=@player.PlayerID">[Update]</a></td>
         </tr>
-
-        @foreach (var player in Model)
-        {
-            <tr>
-                <td>@player.PlayerName &nbsp; &nbsp;</td>
-                <td>@player.PlayerNationality &nbsp; &nbsp;</td>
-                <td>@player.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - player.PlayerBirthDate.Year)) &nbsp; &nbsp;</td>
-                <td>@player.PlayerPosition &nbsp; &nbsp;</td>
-                <td>€@player.PlayerValue m</td>
-                <td><a href="/Home/DeletePlayer?playerid=@player.PlayerID">[Delete]</a></td>
-                <td>&nbsp;<a href="/Home/UpdatePlayer?playerid=@player.PlayerID">[Update]</a></td>
-            </tr>
-        }
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>€@Math.Round(Model.Sum(x => x.PlayerValue), 2) m</td>
-        </tr>
-    </table>
-
-</body>
-</html>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>€@Math.Round(Model.Sum(x => x.PlayerValue), 2) m</td>
+    </tr>
+</table>

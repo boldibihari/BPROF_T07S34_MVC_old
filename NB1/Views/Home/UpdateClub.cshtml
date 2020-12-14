@@ -1,27 +1,18 @@
 ﻿@using Models
 @model Club
-<!DOCTYPE html>
-<html>
-<head>
-    <title>UpdateClub</title>
-</head>
-<body>
 
-    <h1>Update club</h1>
-    <form action="/Home/UpdateClub" method="post">
-        Name: <br />
-        <input type="text" value="@Model.ClubName" name="ClubName" /> <br />
-        Colour: <br />
-        <input type="text" value="@Model.ClubColour" name="ClubColour" /> <br />
-        City: <br />
-        <input type="text" value="@Model.ClubCity" name="ClubCity" /> <br />
-        Founded: <br />
-        <input type="number" value="@Model.ClubFounded" name="ClubFounded" /> <br />
-        <input type="hidden" value="@Model.ClubID" name="oldid" />
-        <input type="hidden" value="@Model.Players" name="Players" />
-        <input type="hidden" value="@Model.Manager" name="Manager" />
-        <input type="submit" value="Update" /> <br />
-    </form>
-
-</body>
-</html>
+<h1>Update club</h1>
+<form action="/Home/UpdateClub" method="post">
+    Name: <br />
+    <input type="text" value="@Model.ClubName" name="ClubName" /> <br />
+    Colour: <br />
+    <input type="text" value="@Model.ClubColour" name="ClubColour" /> <br />
+    City: <br />
+    <input type="text" value="@Model.ClubCity" name="ClubCity" /> <br />
+    Founded: <br />
+    <input type="number" value="@Model.ClubFounded" name="ClubFounded" /> <br />
+    <input type="hidden" value="@Model.ClubID" name="oldid" />
+    <input type="hidden" value="@Model.Players" name="Players" />
+    <input type="hidden" value="@Model.Manager" name="Manager" />
+    <input type="submit" value="Update" /> <br />
+</form>

@@ -1,30 +1,21 @@
 ﻿@using Models
 @model ClubStatistics
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ClubStatistics</title>
-</head>
-<body>
 
-    <h1>Statistics</h1>
-    <p>Club value: €@Model.ClubValue m</p>
-    <p>Average age: @Model.AverageAge</p>
-    <p>Average player value: €@Model.AveragePlayerValue m</p>
-    <p>Nationalities:</p>
-    @foreach (var nationality in Model.Nationality)
-    {
-        <ul>
-            <li>@nationality</li>
-        </ul>
-    }
-    <p>Positions:</p>
-    @foreach (var position in Model.Position)
-    {
-        <ul>
-            <li>@position</li>
-        </ul>
-    }
-
-</body>
-</html>
+<h1>Statistics</h1>
+<p>Club value: €@Model.ClubValue m</p>
+<p>Average age: @Model.AverageAge</p>
+<p>Average player value: €@Model.AveragePlayerValue m</p>
+<p>Nationalities:</p>
+@foreach (var nationality in Model.Nationality)
+{
+   <ul>
+      <li>@nationality</li>
+   </ul>
+}
+<p>Positions:</p>
+@foreach (var position in Model.Position)
+{
+   <ul>
+      <li>@position</li>
+   </ul>
+}

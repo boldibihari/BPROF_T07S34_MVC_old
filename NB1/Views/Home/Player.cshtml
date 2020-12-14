@@ -1,31 +1,23 @@
 ﻿@using Models
 @model Player
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@Model.PlayerName</title>
-</head>
-<body>
 
-    <a href="/Home/Index">[Main page]</a> <br />
-    <h1>@Model.PlayerName</h1>
+<a href="/Home/Index">[Main page]</a>
+<br />
+<h1>@Model.PlayerName</h1>
 
-    <table>
-        <tr>
-            <th>Nationality &nbsp; &nbsp;</th>
-            <th>Birthdate &nbsp; &nbsp;</th>
-            <th>Position &nbsp; &nbsp;</th>
-            <th>Value &nbsp; &nbsp;</th>
-            <th>Club &nbsp; &nbsp;</th>
-        </tr>
-        <tr>
-            <td>@Model.PlayerNationality &nbsp; &nbsp;</td>
-            <td>@Model.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - Model.PlayerBirthDate.Year))&nbsp; &nbsp;</td>
-            <td>@Model.PlayerPosition &nbsp; &nbsp;</td>
-            <td>€@Model.PlayerValue m&nbsp; &nbsp;</td>
-            <td>@Model.Club.ClubName &nbsp; &nbsp;</td>
-        </tr>
-    </table>
-
-</body>
-</html>
+<table>
+    <tr>
+        <th>Nationality &nbsp; &nbsp;</th>
+        <th>Birthdate &nbsp; &nbsp;</th>
+        <th>Position &nbsp; &nbsp;</th>
+        <th>Value &nbsp; &nbsp;</th>
+        <th>Club &nbsp; &nbsp;</th>
+    </tr>
+    <tr>
+        <td>@Model.PlayerNationality &nbsp; &nbsp;</td>
+        <td>@Model.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - Model.PlayerBirthDate.Year))&nbsp; &nbsp;</td>
+        <td>@Model.PlayerPosition &nbsp; &nbsp;</td>
+        <td>€@Model.PlayerValue m&nbsp; &nbsp;</td>
+        <td>@Model.Club.ClubName &nbsp; &nbsp;</td>
+    </tr>
+</table>

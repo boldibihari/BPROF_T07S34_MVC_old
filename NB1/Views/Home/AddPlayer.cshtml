@@ -1,34 +1,26 @@
 ﻿@model string
-<!DOCTYPE html>
-<html>
-<head>
-    <title>AddPlayer</title>
-</head>
-<body>
 
-    <a href="/Home/Index">[Main page]</a> <br />
-    <h1>Add new player</h1>
-    <form action="/Home/AddPlayer" method="post">
-        Name: <br />
-        <input type="text" name="PlayerName" /> <br />
-        Nationality: <br />
-        <input type="text" name="PlayerNationality" /> <br />
-        Birthdate: <br />
-        <input type="datetime" name="PlayerBirthDate" /> <br />
-        Position: <br />
-        <input type="radio" name="PlayerPosition" value="Goalkeeper">
-        <label for="Goalkeeper">Goalkeeper</label><br>
-        <input type="radio" name="PlayerPosition" value="Defender">
-        <label for="Defender">Defender</label><br>
-        <input type="radio" name="PlayerPosition" value="Midfielder">
-        <label for="Midfielder">Midfielder</label><br>
-        <input type="radio" name="PlayerPosition" value="Forward">
-        <label for="Forward">Forward</label><br><br>
-        Value: <br />
-        <input type="text" name="PlayerValue" /> <br />
-        <input type="hidden" name="clubid" value="@Model" /> <br />
-        <input type="submit" value="Add" /> <br />
-    </form>
-
-</body>
-</html>
+<a href="/Home/Index">[Main page]</a>
+<br />
+<h1>Add new player</h1>
+<form action="/Home/AddPlayer" method="post">
+    Name: <br />
+    <input type="text" name="PlayerName" /> <br />
+    Nationality: <br />
+    <input type="text" name="PlayerNationality" /> <br />
+    Birthdate: <br />
+    <input type="datetime" name="PlayerBirthDate" /> <br />
+    Position: <br />
+    <input type="radio" name="PlayerPosition" value="Goalkeeper">
+    <label for="Goalkeeper">Goalkeeper</label><br>
+    <input type="radio" name="PlayerPosition" value="Defender">
+    <label for="Defender">Defender</label><br>
+    <input type="radio" name="PlayerPosition" value="Midfielder">
+    <label for="Midfielder">Midfielder</label><br>
+    <input type="radio" name="PlayerPosition" value="Forward">
+    <label for="Forward">Forward</label><br><br>
+    Value: <br />
+    <input type="text" name="PlayerValue" /> <br />
+    <input type="hidden" name="clubid" value="@Model" /> <br />
+    <input type="submit" value="Add" /> <br />
+</form>

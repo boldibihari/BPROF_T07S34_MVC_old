@@ -1,29 +1,21 @@
 ﻿@using Models
 @model Manager
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@Model.ManagerName</title>
-</head>
-<body>
 
-    <a href="/Home/Index">[Main page]</a> <br />
-    <h1>@Model.ManagerName</h1>
+<a href="/Home/Index">[Main page]</a>
+<br />
+<h1>@Model.ManagerName</h1>
 
-    <table>
-        <tr>
-            <th>Nationality &nbsp; &nbsp;</th>
-            <th>Birthdate &nbsp; &nbsp;</th>
-            <th>Starter year &nbsp; &nbsp;</th>
-            <th>Club &nbsp; &nbsp;</th>
-        </tr>
-        <tr>
-            <td>@Model.ManagerNationality &nbsp; &nbsp;</td>
-            <td>@Model.ManagerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - Model.ManagerBirthDate.Year))&nbsp; &nbsp;</td>
-            <td>@Model.ManagerStartYear &nbsp; &nbsp;</td>
-            <td>@Model.Club.ClubName &nbsp; &nbsp;</td>
-        </tr>
-    </table>
-
-</body>
-</html>
+<table>
+    <tr>
+        <th>Nationality &nbsp; &nbsp;</th>
+        <th>Birthdate &nbsp; &nbsp;</th>
+        <th>Starter year &nbsp; &nbsp;</th>
+        <th>Club &nbsp; &nbsp;</th>
+    </tr>
+    <tr>
+        <td>@Model.ManagerNationality &nbsp; &nbsp;</td>
+        <td>@Model.ManagerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - Model.ManagerBirthDate.Year))&nbsp; &nbsp;</td>
+        <td>@Model.ManagerStartYear &nbsp; &nbsp;</td>
+        <td>@Model.Club.ClubName &nbsp; &nbsp;</td>
+    </tr>
+</table>
