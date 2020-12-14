@@ -16,16 +16,28 @@
         Birthdate: <br />
         <input type="text" value="@Model.PlayerBirthDate" name="PlayerBirthDate" /> <br />
         Position: <br />
-        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
+        <input type="radio" name="PlayerPosition" value="Goalkeeper" @if (Model.PlayerPosition.ToString() == "Goalkeeper")
+        {
+            @: checked
+        }>
         <label for="Goalkeeper">Goalkeeper</label><br>
-        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
+        <input type="radio" name="PlayerPosition" value="Defender" @if (Model.PlayerPosition.ToString() == "Defender")
+        {
+            @: checked
+        }>
         <label for="Defender">Defender</label><br>
-        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
-        <label for="Midfielder">Midfielder</label><br><br>
-        <input type="radio" name="PlayerPosition" value="@Model.PlayerPosition">
+        <input type="radio" name="PlayerPosition" value="Midfielder" @if (Model.PlayerPosition.ToString() == "Midfielder")
+        {
+            @: checked
+        }>
+        <label for="Midfielder">Midfielder</label><br>
+        <input type="radio" name="PlayerPosition" value="Forward" @if (Model.PlayerPosition.ToString() == "Forward")
+        {
+            @: checked
+        }>
         <label for="Forward">Forward</label><br><br>
         Value: <br />
-        <input type="number" value="@Model.PlayerValue" name="PlayerValue" /> <br />
+        <input type="text" value="@Model.PlayerValue" name="PlayerValue" /> <br />
         <input type="hidden" value="@Model.PlayerID" name="PlayerID" />
         <input type="hidden" value="@Model.ClubID" name="ClubID" />
         <input type="submit" value="Update" /> <br />
