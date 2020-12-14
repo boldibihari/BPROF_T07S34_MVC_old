@@ -39,6 +39,8 @@ namespace NB1
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseMvcWithDefaultRoute();
         }
     }
