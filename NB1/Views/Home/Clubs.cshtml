@@ -1,10 +1,13 @@
 ﻿@using Models
 @model IQueryable<Club>
 
-<a href="/Home/Index">[Main page]</a>
-<h1>Clubs</h1>
-@foreach (var club in Model)
-{
-    <a href="/Home/Club?clubid=@club.ClubID">@club.ClubName</a>
-    <a href="/Home/DeleteClub?clubid=@club.ClubID">[Delete]</a> <br />
-}
+<a class="mainpage" href="/Home/Index">Main page</a>
+<div class="collection">
+    <h1>Clubs</h1>
+    @foreach (var club in Model)
+    {
+        <a href="/Home/Club?clubid=@club.ClubID">@club.ClubName</a> 
+        <a class="button" href="/Home/DeleteClub?clubid=@club.ClubID">[Delete]</a>
+        <br />
+    }
+</div>

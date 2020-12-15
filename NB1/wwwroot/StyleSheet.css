@@ -1,0 +1,298 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-image: url('Images/Background.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    text-align: left;
+}
+
+    .header h1 {
+        font-size: 60px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        color: white;
+        font-weight: bold
+    }
+
+    .header img {
+        width: 5%;
+        height: auto;
+    }
+
+.topnav {
+    overflow: hidden;
+    background-color: darkolivegreen;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        .topnav a:hover {
+            background-color: whitesmoke;
+            color: black;
+        }
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+    text-align: center;
+}
+
+    .column a {
+        background-color: darkolivegreen;
+        color: white;
+        border: 2px darkgreen;
+        border-radius: 5px;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .column a:hover {
+            background-color: whitesmoke;
+            color: black;
+        }
+
+    .column img {
+        width: 70%;
+        height: auto;
+        margin: 20px;
+        border: 5px solid darkolivegreen;
+        border-radius: 5px;
+    }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type=number], select {
+    width: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type=date], select {
+    width: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+.form {
+    border-radius: 5px;
+    background-color: darkolivegreen;
+    padding: 20px;
+    margin: 30px;
+    color: white;
+}
+
+.collection {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+    .collection h1 {
+        color: white;
+        font-size: 40px;
+        margin-left: 50px;
+    }
+
+        .collection h1 a {
+            font-size: 15px;
+        }
+
+    .collection a {
+        color: white;
+        margin-left: 60px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: darkolivegreen;
+        border: 2px darkgreen;
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .collection a:hover {
+            background-color: whitesmoke;
+            color: black;
+        }
+
+.club {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+    .club h1 {
+        color: white;
+        font-size: 50px;
+        margin-left: 20px;
+    }
+
+    .club a {
+        color: white;
+        margin-left: 40px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: darkolivegreen;
+        border: 2px darkgreen;
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .club a:hover {
+            background-color: whitesmoke;
+            color: black;
+        }
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+    table td, table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        color: white;
+    }
+
+    table tr:nth-child(even) {
+        background-color: darkseagreen;
+    }
+
+    table tr:hover {
+        background-color: darkgreen;
+    }
+
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: darkolivegreen;
+    }
+
+.allplayersfromclub {
+    background-image: url('Images/AllPlayerFromClub.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    margin-left: 20px;
+    font-size: 40px;
+    text-shadow: 3px 3px darkolivegreen;
+}
+.button {
+    color: white;
+    margin-left: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: darkolivegreen;
+    border: 2px darkgreen;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+.mainpage {
+    color: white;
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: darkolivegreen;
+    border: 2px darkgreen;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.mainpage:hover {
+    background-color: whitesmoke;
+    color: black;
+}

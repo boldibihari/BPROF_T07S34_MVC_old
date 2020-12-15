@@ -1,22 +1,45 @@
 ﻿@using Models
 @model NB1Statistics
 
+<a class="mainpage" href="/Home/Index">Main page</a>
 <h1>Statistics</h1>
-<p>Value: €@Model.ClubValue m</p>
-<p>Average age: @Model.AverageAge</p>
-<p>Average player value: €@Model.AveragePlayerValue m</p>
-<p>Average club value: €@Model.AverageClubValue m</p>
-<p>Nationalities:</p>
-@foreach (var nationalities in Model.Nationality)
-{
-    <ul>
-       <li>@nationalities</li>
-    </ul>
-}
-<p>Positions:</p>
-@foreach (var positions in Model.Position)
-{
-    <ul>
-        <li>@positions</li>
-    </ul>
-}
+<div class="statistics">
+    <table>
+        <tr>
+            <th>Value</th>
+            <th>Average age</th>
+            <th>Average player value</th>
+            <th>Average club value</th>
+        </tr>
+        <tr>
+            <td>€@Model.ClubValue m</td>
+            <td>@Model.AverageAge</td>
+            <td>€@Model.AveragePlayerValue m</td>
+            <td>€@Model.AverageClubValue m</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Nationalities</th>
+        </tr>
+
+        @foreach (var nationality in Model.Nationality)
+        {
+            <tr>
+                <td>@nationality</td>
+            </tr>
+        }
+    </table>
+    <table>
+        <tr>
+            <th>Positions</th>
+        </tr>
+
+        @foreach (var position in Model.Position)
+        {
+            <tr>
+                <td>@position</td>
+            </tr>
+        }
+    </table>
+</div>

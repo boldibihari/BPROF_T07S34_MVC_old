@@ -1,18 +1,21 @@
 ﻿@using Models
 @model Club
 
+<a class="mainpage" href="/Home/Index">Main page</a>
 <h1>Update club</h1>
-<form action="/Home/UpdateClub" method="post">
-    Name: <br />
-    <input type="text" value="@Model.ClubName" name="ClubName" /> <br />
-    Colour: <br />
-    <input type="text" value="@Model.ClubColour" name="ClubColour" /> <br />
-    City: <br />
-    <input type="text" value="@Model.ClubCity" name="ClubCity" /> <br />
-    Founded: <br />
-    <input type="number" value="@Model.ClubFounded" name="ClubFounded" /> <br />
-    <input type="hidden" value="@Model.ClubID" name="oldid" />
-    <input type="hidden" value="@Model.Players" name="Players" />
-    <input type="hidden" value="@Model.Manager" name="Manager" />
-    <input type="submit" value="Update" /> <br />
-</form>
+<div class="form">
+    <form action="/Home/UpdateClub" method="post">
+        Name: <br />
+        <input type="text" value="@Model.ClubName" name="ClubName" /> <br />
+        Colour: <br />
+        <input type="text" value="@Model.ClubColour" name="ClubColour" /> <br />
+        City: <br />
+        <input type="text" value="@Model.ClubCity" name="ClubCity" /> <br />
+        Founded: <br />
+        <input type="number" value="@Model.ClubFounded" name="ClubFounded" /> <br />
+        <input type="hidden" value="@Model.ClubID" name="oldid" />
+        <input type="hidden" value="@Model.Players" name="Players" />
+        <input type="hidden" value="@Model.Manager" name="Manager" />
+        <input type="submit" value="Update" /> <br />
+    </form>
+</div>

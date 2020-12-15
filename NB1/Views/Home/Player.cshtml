@@ -1,23 +1,24 @@
 ﻿@using Models
 @model Player
 
-<a href="/Home/Index">[Main page]</a>
-<br />
+<a class="mainpage" href="/Home/Index">Main page</a>
+<br /><br /><br /><br />
 <h1>@Model.PlayerName</h1>
+<br /><br /><br />
 
 <table>
     <tr>
-        <th>Nationality &nbsp; &nbsp;</th>
-        <th>Birthdate &nbsp; &nbsp;</th>
-        <th>Position &nbsp; &nbsp;</th>
-        <th>Value &nbsp; &nbsp;</th>
-        <th>Club &nbsp; &nbsp;</th>
+        <th>Nationality</th>
+        <th>Birthdate</th>
+        <th>Position</th>
+        <th>Value</th>
+        <th>Club</th>
     </tr>
     <tr>
-        <td>@Model.PlayerNationality &nbsp; &nbsp;</td>
+        <td>@Model.PlayerNationality</td>
         <td>@Model.PlayerBirthDate.ToString("yyyy.MM.dd") &nbsp; (@(DateTime.Now.Year - Model.PlayerBirthDate.Year))&nbsp; &nbsp;</td>
-        <td>@Model.PlayerPosition &nbsp; &nbsp;</td>
-        <td>€@Model.PlayerValue m&nbsp; &nbsp;</td>
-        <td>@Model.Club.ClubName &nbsp; &nbsp;</td>
+        <td>@Model.PlayerPosition</td>
+        <td>€@Model.PlayerValue m</td>
+        <td>@Model.Club.ClubName</td>
     </tr>
 </table>

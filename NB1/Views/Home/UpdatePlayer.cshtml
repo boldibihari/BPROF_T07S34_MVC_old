@@ -1,30 +1,33 @@
 ﻿@using Models
 @model Player
 
+<a class="mainpage" href="/Home/Index">Main page</a>
 <h1>Update player</h1>
-<form action="/Home/UpdatePlayer" method="post">
-    Name: <br />
-    <input type="text" value="@Model.PlayerName" name="PlayerName" /> <br />
-    Nationality: <br />
-    <input type="text" value="@Model.PlayerNationality" name="PlayerNationality" /> <br />
-    Birthdate: <br />
-    <input type="text" value="@Model.PlayerBirthDate" name="PlayerBirthDate" /> <br />
-    Position: <br />
-    <input type="radio" name="PlayerPosition" value="Goalkeeper" @if (Model.PlayerPosition.ToString() == "Goalkeeper") { @: checked
-           }>
-    <label for="Goalkeeper">Goalkeeper</label><br>
-    <input type="radio" name="PlayerPosition" value="Defender" @if (Model.PlayerPosition.ToString() == "Defender") { @: checked
-           }>
-    <label for="Defender">Defender</label><br>
-    <input type="radio" name="PlayerPosition" value="Midfielder" @if (Model.PlayerPosition.ToString() == "Midfielder") { @: checked
-           }>
-    <label for="Midfielder">Midfielder</label><br>
-    <input type="radio" name="PlayerPosition" value="Forward" @if (Model.PlayerPosition.ToString() == "Forward") { @: checked
-           }>
-    <label for="Forward">Forward</label><br><br>
-    Value: <br />
-    <input type="text" value="@Model.PlayerValue" name="PlayerValue" /> <br />
-    <input type="hidden" value="@Model.PlayerID" name="PlayerID" />
-    <input type="hidden" value="@Model.ClubID" name="ClubID" />
-    <input type="submit" value="Update" /> <br />
-</form>
+<div class="form">
+    <form action="/Home/UpdatePlayer" method="post">
+        Name: <br />
+        <input type="text" value="@Model.PlayerName" name="PlayerName" /> <br />
+        Nationality: <br />
+        <input type="text" value="@Model.PlayerNationality" name="PlayerNationality" /> <br />
+        Birthdate: <br />
+        <input type="text" value="@Model.PlayerBirthDate" name="PlayerBirthDate" /> <br />
+        Position: <br />
+        <input type="radio" name="PlayerPosition" value="Goalkeeper" @if (Model.PlayerPosition.ToString() == "Goalkeeper") { @: checked
+               }>
+        <label for="Goalkeeper">Goalkeeper</label><br>
+        <input type="radio" name="PlayerPosition" value="Defender" @if (Model.PlayerPosition.ToString() == "Defender") { @: checked
+               }>
+        <label for="Defender">Defender</label><br>
+        <input type="radio" name="PlayerPosition" value="Midfielder" @if (Model.PlayerPosition.ToString() == "Midfielder") { @: checked
+               }>
+        <label for="Midfielder">Midfielder</label><br>
+        <input type="radio" name="PlayerPosition" value="Forward" @if (Model.PlayerPosition.ToString() == "Forward") { @: checked
+               }>
+        <label for="Forward">Forward</label><br><br>
+        Value: <br />
+        <input type="text" value="@Model.PlayerValue" name="PlayerValue" /> <br />
+        <input type="hidden" value="@Model.PlayerID" name="PlayerID" />
+        <input type="hidden" value="@Model.ClubID" name="ClubID" />
+        <input type="submit" value="Update" /> <br />
+    </form>
+</div>

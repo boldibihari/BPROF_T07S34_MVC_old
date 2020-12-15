@@ -1,36 +1,37 @@
 ﻿@using Models
 @model Club
 
-<a href="/Home/Index">[Main page]</a>
+<a class="mainpage" href="/Home/Index">Main page</a>
 <br />
-<h1>@Model.ClubName</h1>
-<a href="/Home/AddPlayer?clubid=@Model.ClubID">Add new player</a> &nbsp;
-<a href="/Home/UpdateClub?clubid=@Model.ClubID">Update club</a>
-<br />
-<a href="/Home/ClubStatistics?clubid=@Model.ClubID">Statistics</a> <br /><br />
-<table>
-    <tr>
-        <th>Founded &nbsp; &nbsp;</th>
-        <th>Colour &nbsp; &nbsp;</th>
-        <th>City &nbsp; &nbsp;</th>
-        <th>Stadium &nbsp; &nbsp;</th>
-    </tr>
-    <tr>
-        <td>@Model.ClubFounded &nbsp; &nbsp;</td>
-        <td>@Model.ClubColour &nbsp; &nbsp;</td>
-        <td>@Model.ClubCity &nbsp; &nbsp;</td>
-        <td>@Model.Stadium &nbsp; &nbsp;</td>
-    </tr>
-</table>
-<br />
-@if (Model.Manager != null)
-{
-    <a href="/Home/Manager?managerid=@Model.Manager.ManagerID">@Model.Manager.ManagerName</a>
-    <a href="/Home/DeleteManager?managerid=@Model.Manager.ManagerID">[Delete]</a>
-    <a href="/Home/UpdateManager?managerid=@Model.Manager.ManagerID">[Update]</a> <br /><br />
-}
-else
-{
-    <a href="/Home/AddManager?clubid=@Model.ClubID">[Add manager]</a> <br /><br />
-}
-<a href="/Home/AllPlayerFromClub?clubid=@Model.ClubID">Players</a>
+<div class="club">
+    <h1>@Model.ClubName</h1>
+    <a href="/Home/AddPlayer?clubid=@Model.ClubID">Add new player</a> &nbsp;
+    <a class="button" href="/Home/UpdateClub?clubid=@Model.ClubID">Update club</a>
+    <a href="/Home/ClubStatistics?clubid=@Model.ClubID">Statistics</a> <br /><br />
+    <table>
+        <tr>
+            <th>Founded</th>
+            <th>Colour</th>
+            <th>City</th>
+            <th>Stadium</th>
+        </tr>
+        <tr>
+            <td>@Model.ClubFounded</td>
+            <td>@Model.ClubColour</td>
+            <td>@Model.ClubCity</td>
+            <td>@Model.Stadium</td>
+        </tr>
+    </table>
+    <br />
+    @if (Model.Manager != null)
+    {
+        <a href="/Home/Manager?managerid=@Model.Manager.ManagerID">@Model.Manager.ManagerName</a>
+        <a class="button" href="/Home/DeleteManager?managerid=@Model.Manager.ManagerID">Delete</a>
+        <a class="button" href="/Home/UpdateManager?managerid=@Model.Manager.ManagerID">Update</a> <br /><br />
+    }
+    else
+    {
+        <a class="button" href="/Home/AddManager?clubid=@Model.ClubID">[Add manager]</a> <br /><br />
+    }
+    <a href="/Home/AllPlayerFromClub?clubid=@Model.ClubID">Players</a>
+</div>
