@@ -9,16 +9,17 @@ namespace Logic
 {
     public class PlayerLogic
     {
-        IRepository<Club> clubRepo;
+        //IRepository<Club> clubRepo;
         IRepository<Player> playerRepo;
-        IRepository<Manager> managerRepo;
+        //IRepository<Manager> managerRepo;
 
-        public PlayerLogic(IRepository<Club> clubRepo, IRepository<Player> playerRepo, IRepository<Manager> managerRepo)
+        public PlayerLogic(/*IRepository<Club> clubRepo,*/ IRepository<Player> playerRepo/*, IRepository<Manager> managerRepo*/)
         {
-            this.clubRepo = clubRepo;
+            //this.clubRepo = clubRepo;
             this.playerRepo = playerRepo;
-            this.managerRepo = managerRepo;
+            //this.managerRepo = managerRepo;
         }
+
         public void AddPlayer(Player item)
         {
             this.playerRepo.Add(item);
