@@ -219,7 +219,7 @@ input[type=submit] {
             color: black;
         }
 
-table {
+.default {
     border-collapse: collapse;
     width: 80%;
     margin-left: auto;
@@ -227,22 +227,22 @@ table {
     border-radius: 5px;
 }
 
-    table td, table th {
+    .default td, .default th {
         border: 1px solid #ddd;
         padding: 8px;
         text-align: center;
         color: white;
     }
 
-    table tr:nth-child(even) {
+    .default tr:nth-child(even) {
         background-color: darkseagreen;
     }
 
-    table tr:hover {
+    .default tr:hover {
         background-color: darkgreen;
     }
 
-    table th {
+    .default th {
         padding-top: 12px;
         padding-bottom: 12px;
         background-color: darkolivegreen;

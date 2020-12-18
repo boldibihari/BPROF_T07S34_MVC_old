@@ -15,6 +15,7 @@ namespace NB1Tests
         public Mock<IRepository<Club>> clubRepo;
         public Mock<IRepository<Player>> playerRepo;
         public Mock<IRepository<Manager>> managerRepo;
+        public double expectedvalue;
 
         [SetUp]
         public void Setup()
@@ -25,7 +26,7 @@ namespace NB1Tests
 
             List<Club> clubs = new List<Club>()
             {
-                new Club() 
+                new Club()
                 {
                   ClubID = Guid.NewGuid().ToString(),
                   ClubName = "Ferencvárosi TC",
@@ -89,6 +90,7 @@ namespace NB1Tests
             playerRepo.Setup(repo => repo.Read()).Returns(players.AsQueryable());
         }
 
+        // CRUD
         [Test]
         public void AddNewClubTest()
         {
@@ -232,6 +234,7 @@ namespace NB1Tests
                   Stadium = "Szusza Ferenc Stadion"
                 }
             };
+            
 
             Club club = clubs[0];
 

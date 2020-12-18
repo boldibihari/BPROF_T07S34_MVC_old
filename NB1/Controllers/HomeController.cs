@@ -109,7 +109,10 @@ namespace NB1.Controllers
             }
             var manager = clubLogic.GetClub(clubid).Manager;
             clubLogic.DeleteManagerFromClub(manager, clubid);
-            managerLogic.DeleteManager(manager.ManagerID);
+            if (manager != null)
+            {
+                managerLogic.DeleteManager(manager.ManagerID);
+            }
             clubLogic.DeleteClub(clubid);
             return RedirectToAction(nameof(Clubs));
         }
