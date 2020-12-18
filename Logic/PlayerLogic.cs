@@ -60,10 +60,10 @@ namespace Logic
         {
             var players = GetAllPlayer();
             var q = (from x in players
-                     group x by x.Club.ClubName into g
+                     group x by x.Club.ClubID into g
                      select new
                      {
-                         ClubName = g.Key,
+                         ClubID = g.Key,
                          Value = g.Sum(x => x.PlayerValue)
                      }).Average(x => x.Value);
             return Math.Round(q, 2);
